@@ -1,14 +1,14 @@
 # Site settings
-name: Less Or More
-email: luoyan35714@126.com
-author: Freud Kang
-url: http://www.hifreud.com
-resume_site: http://www.hifreud.com/Resume.io/
-github: https://github.com/luoyan35714/
-baseurl: "/LessOrMore"
-description: Actually, less is more!
-meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
-motto: It's our wits that make us men.
+name: 安博尔德的博客
+email: emberd@163.com
+author: 安博尔德
+url: http://icoding.pw
+resume_site: http://icoding.pw
+github: https://github.com/lijixue/
+baseurl: ""
+description: 爱编程，爱思考，爱创造
+meta_description: meta111;description111
+motto: No one can call back yesterday, yesterday will not becalled again.
 banner: 学而不思则罔，思而不学则殆。
 
 #permalink: /:categories/:year/:month/:day/:title/
@@ -17,21 +17,21 @@ paginate: 10
 
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-github_username: luoyan35714
+github_username: lijixue
 highlighter: Pygments
 
 # Build settings
 markdown: kramdown
 
-baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
+baidu_analysis: llllljjjjjjjjjjjjjxxxxxxxxxx
 
 FB:
   comments :
-    provider : yungentie
+    provider : ljx
     duoshuo:
-        short_name : luoyan35714
+        short_name : duoshuo
     disqus :
-        short_name : freudkang
+        short_name : disqus
     # facebook :
     #   appid : 123
     #   num_posts: 5
