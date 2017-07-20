@@ -10,5 +10,5 @@ tag: sublime
 {:toc}
 
 
-##*安装PackageControl##
-官网：[https://packagecontrol.io]
+##安装PackageControl##
+官网：[https://packagecontrol.io]()
