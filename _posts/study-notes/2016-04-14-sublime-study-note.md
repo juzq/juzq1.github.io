@@ -54,9 +54,9 @@ hkcr,"Directory\shell\SublimeText3\command",,,"""%1%\sublime_text.exe"" ""%%1"""
 ## 常用配置
 ```
 {
-	// 显示右侧迷你视图
+	# 显示右侧迷你视图
 	"always_show_minimap_viewport": true,
-	#迷你视图边框
+	# 迷你视图边框
 	"draw_minimap_border": true,
 	# 默认字体
 	"font_face": "Consolas",
