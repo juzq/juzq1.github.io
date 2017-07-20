@@ -34,7 +34,8 @@ Preference->Settings
 ## 添加到右键菜单
 1. 进入到SublimeText3安装目录
 2. 创建文本文件然后重命名为：```sublime_addright.inf```
-3. 填入以下代码：
+3. 填入以下代码
+
 ```
 [Version]
 Signature="$Windows NT$"
