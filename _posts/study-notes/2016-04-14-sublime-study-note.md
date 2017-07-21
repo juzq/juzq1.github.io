@@ -86,3 +86,5 @@ hkcr,"Directory\shell\SublimeText3\command",,,"""%1%\sublime_text.exe"" ""%%1"""
 	"word_wrap": true
 }
 ```
+
+> 原文发表在我的cnblog博客：<http://www.cnblogs.com/emberd/p/5390961.html>，于2017/07/20迁入
