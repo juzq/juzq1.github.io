@@ -47,3 +47,28 @@ tag: git
 
 2. 将upstream获取到本地：`git fetch upstream`
 3. 合并：`git merge upstream/master`
+
+# 使用ssh-key进行身份验证 {#ssh-key}
+提交代码到远程仓库时，默认是使用用户名+密码进行身份验证，频繁提交代码时非常繁琐，因此可以使用ssh密钥的方式进行身份验证
+1. 生成ssh密钥
+两种方式任选一种即可：
+* 命令方式：`ssh-keygen -t rsa`
+* xshell生成方式：`工具`->`用户密钥管理者`->`生成`，按照提示进行操作即可<br>
+生成好后默认在`C:\Users\用户名\.ssh`目录下(Windows)
+
+2. 添加公钥到github
+登陆github，进入`Settings`->`Personal settings`->`SSH and GPG keys`->`New SSH key`，填写title和key即可，key是第一步生成的.pub结尾的公钥。
+
+3. 修改远程仓库地址
+`git remote set-url origin git@github.com:USERNAME/REPO_NAME.git`<br>
+其中，USERNAME为github用户名，REPO_NAME为仓库名
+
+4. 修改私钥名称
+为了使私钥能被git识别，必须将私钥放在`C:\Users\用户名\.ssh`目录下，并将私钥命名为`id_rsa`或`id_dsa`。
+
+5. 测试
+`ssh -T git@github.com`<br>
+提示`Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.`<br>
+则表示设置成功。<br>
+提示`Permission denied (publickey).`<br>
+则表示失败。
