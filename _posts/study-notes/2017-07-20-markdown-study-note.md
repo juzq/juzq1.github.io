@@ -10,14 +10,14 @@ tag: markdown
 {:toc}
 
 
-# 简介（是什么）  {: #intro}
+# 简介（是什么） {#introduce}
 官网：<https://daringfireball.net/projects/markdown><br>
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。
 
-# {: #id-for-item-1 }  用途（能干什么）
+# 用途（能干什么） {#use}
 Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。
 
-# 编辑器
+# 编辑器 {#editor}
 
 ## Windows
 * VSCode
@@ -34,7 +34,7 @@ Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，
 ## IOS
 * Byword
 
-## 推荐
+## 推荐 {#recommend}
 * MarkdownPad（Windows）<br>
 官网：<https://markdownpad.com><br>
 注册码（**仅用于功能测试，请在24小时内删除，若喜欢该软件，请在官网购买正版**）<br>
@@ -45,10 +45,10 @@ GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE
 ```
 
 
-# 语法
+# 语法 {#syntax}
 说明：每种语法后都必须添加**空格**才能生效
 
-## 标题
+## 标题 {#title}
 Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。
 1. 类 Setext 形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），例如<br>
 ```
@@ -65,7 +65,7 @@ This is an H2
 ### 这是 H3 ###
 ```
 
-## 文本样式
+## 文本样式 {#text}
 * 加粗：``**Text**`` （快捷键：Ctrl+B）<br>
 **Text**
 * 斜体：``*Text*`` （快捷键：Ctrl+I）<br>
@@ -74,7 +74,7 @@ This is an H2
 ~~Text~~
 * 换行符 : 一行结束时输入两个空格，也可以使用`<br>`
 
-## 列表
+## 列表 {#list}
 Markdown支持有序列表和无序列表。
 1. 有序列表:使用数字接着一个英文句点（并有个空格）：
 ```
@@ -93,7 +93,7 @@ Markdown支持有序列表和无序列表。
 + i love you very much
 - i love you more
 
-## 链接
+## 链接 {#url}
 Markdown 支持两种形式的链接语法：行内式和参考式两种形式。
 1. 行内式<br>
 * 要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：
@@ -123,13 +123,13 @@ Markdown 支持两种形式的链接语法：行内式和参考式两种形式�
 
 [1]: http://icoding.pw/  "This link is my blog."
 
-## 图片
+## 图片 {#pics}
 跟行内式链接类似，只需要在最前面添加`!`符号即可，例如：
 ```
 ![pic](\pics\git笔记\git1.png)
 ```
 
-## 分隔线
+## 分隔线 {#separate}
 你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。
 ```
 * * *
@@ -138,14 +138,14 @@ Markdown 支持两种形式的链接语法：行内式和参考式两种形式�
 ---------------------------------------
 ```
 --------
-## 区块引用
+## 区块引用 {#block}
 Markdown 标记区块引用是使用类似 email 中用 > 的引用方式，Markdown 也允许你偷懒只在整个段落的第一行最前面加上 > 。
 ```
 > No one can call back yesterday, yesterday will not be called again.No one can call back yesterday, yesterday will not be called again.
 ```
 > No one can call back yesterday, yesterday will not be called again.No one can call back yesterday, yesterday will not be called again.
 
-## 注释
+## 注释 {#comment}
 注释分为单行注释与多行注释两种
 1. 单行注释：\`单行注释\`<br>
 `单行注释`
