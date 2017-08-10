@@ -10,11 +10,11 @@ tag: markdown
 {:toc}
 
 
-# 简介（是什么） {: #intro}
+# 简介（是什么）  {: #intro}
 官网：<https://daringfireball.net/projects/markdown><br>
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。
 
-# {: #id-for-item-1 } 用途（能干什么）
+# {: #id-for-item-1 }  用途（能干什么）
 Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。完全采用Markdown编辑器的博客平台有Ghost和Typecho。
 
 # 编辑器
