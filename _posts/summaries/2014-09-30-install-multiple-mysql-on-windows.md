@@ -33,7 +33,7 @@ port=3306
 3. 数据文件路径：
 ```datadir="C:/ProgramData/MySQL2/MySQL Server 5.1/Data/"```
 
-# 注册为系统服务
+# 注册为系统服务 {#register}
 1. cmd命令进入新的数据库安装目录的bin文件夹下，例如：
 ```cd C:\Program Files (x86)\MySQL2\MySQL Server 5.1\bin```
 
