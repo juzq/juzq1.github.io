@@ -10,18 +10,18 @@ tag: sublime
 {:toc}
 
 
-# 指令集
+# 指令集 {#instructions}
 * 简单密码认证：`auth`
 * 关闭连接：`quit`
 * 查询所有键值：`keys *`
 
-## 持久化
+## 持久化 {#persistence}
 * 将数据同步保存到磁盘：`save`
 * 将数据异步保存到磁盘：`bgsave`
 * 返回上次成功将数据保存到磁盘的Unix时戳：`lastsave`
 * 将数据同步保存到磁盘，然后关闭服务：`shundown`
 
-## 远程服务控制
+## 远程服务控制 {#remote}
 * 提供服务器的信息和统计：`info`
 * 实时转储收到的请求：`monitor`
 * 改变复制策略设置：`slaveof`
@@ -29,7 +29,7 @@ tag: sublime
 
 
  
-## 对value操作的命令
+## 对value操作的命令 {#value-cmds}
  
 * 确认一个key是否存在：`exists(key)`
 * 删除一个key：`del(key)`
@@ -45,7 +45,7 @@ tag: sublime
 * 删除当前选择数据库中的所有key：`flushdb`
 * 删除所有数据库中的所有key：`flushall`
  
-## 对String操作的命令
+## 对String操作的命令 {#str-cmds}
  
 * 给数据库中名称为key的string赋予值value：`set(key, value)`
 * 返回数据库中名称为key的string的value：`get(key)`
@@ -62,7 +62,7 @@ tag: sublime
 * 名称为key的string的值附加value：`append(key, value)`
 * 返回名称为key的string的value的子串：`substr(key, start, end)`
  
-## 对List操作的命令
+## 对List操作的命令 {#list-cmds}
  
 * 在名称为key的list尾添加一个值为value的元素：`rpush(key, value)`
 * 在名称为key的list头添加一个值为value的 元素：`lpush(key, value)`
@@ -78,7 +78,7 @@ tag: sublime
 * rpop的block版本。：`brpop(key1, key2,… key N, timeout)`
 * 返回并删除名称为srckey的list的尾元素，并将该元素添加到名称为dstkey的list的头部：`rpoplpush(srckey, dstkey)`
  
-## 对Set操作的命令
+## 对Set操作的命令 {#set-cmds}
  
 * 向名称为key的set中添加元素member：`sadd(key, member)`
 * 删除名称为key的set中的元素member：`srem(key, member) `
@@ -95,7 +95,7 @@ tag: sublime
 * 返回名称为key的set的所有元素：`smembers(key) `
 * 随机返回名称为key的set的一个元素：`srandmember(key) `
  
-## 对Hash操作的命令
+## 对Hash操作的命令 {#hash-cmds}
  
 * 向名称为key的hash中添加元素field：`hset(key, field, value)`
 * 返回名称为key的hash中field对应的value：`hget(key, field)`

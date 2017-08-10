@@ -10,8 +10,8 @@ tag: git
 {:toc}
 
 
-# github建立仓库
-## 建立新项目
+# github建立仓库 {#new-repo}
+## 建立新项目 {#new-proj}
 1. github上新建仓库
 	1. 右上角`+` -> `New repository`
 	2. 填写`Repository name`
@@ -20,7 +20,7 @@ tag: git
 2. 将项目clone到本地<br>
 `git clone https://github.com/lijixue/test.git`
 
-## 建立已存在的项目（稍后导入）
+## 建立已存在的项目（稍后导入） {#old-proj}
 1. github上新建仓库
 	1. 右上角`+` -> `New repository`
 	2. 填写`Repository name`
@@ -40,7 +40,7 @@ tag: git
 6. 推送到远程仓库
 `git push origin master`
 
-# 合并其他分支
+# 合并其他分支 {#merge}
 1. 查看是否配置upstream源：`git remote -v`<br>
 若结果没有upstream，则添加：
 ```git remote add upstream  git remote add upstream https://github.com/xxx/xxx.git```

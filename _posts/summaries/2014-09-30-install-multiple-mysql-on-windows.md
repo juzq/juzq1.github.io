@@ -9,16 +9,16 @@ tag: mysql
 * content
 {:toc}
 
-# 安装mysql
+# 安装mysql {#install-mysql}
 运行MySQL数据库安装程序，正常安装数据库并做好相关配置。（Windows下的安装程序诸如：mysql-essential-5.1.40-win32.msi）
 
-# 拷贝程序文件
+# 拷贝程序文件 {#copy-mysql}
 拷贝原数据库安装目录下的所有文件，如：C:\Program Files (x86)\MySQL\MySQL Server 5.1拷贝至C:\Program Files (x86)\MySQL2\MySQL Server 5.1
 
-# 拷贝数据文件
+# 拷贝数据文件 {#copy-data}
 拷贝原数据库的数据文件，如：C:\ProgramData\MySQL\MySQL Server 5.1\data拷贝至C:\ProgramData\MySQL2\MySQL Server 5.1\data
 
-# 修改新数据库的配置文件
+# 修改新数据库的配置文件 {#config}
 1. 数据库端口：
 ```
 [mysqld]

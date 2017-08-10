@@ -10,7 +10,7 @@ tag: sublime
 {:toc}
 
 
-## 安装PackageControl
+## 安装PackageControl {#install-package}
 官网：<https://packagecontrol.io><br>
 安装步骤<br>
 1. 打开控制台：```View->Show Console（默认快捷键：Ctrl+`）```
@@ -20,7 +20,7 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 ```
 等待完成安装即可
 
-## 安装Soda主题
+## 安装Soda主题 {#install-soda}
 1. 打开命令窗口：```Ctrl+Shift+P```
 2. 打开包管理器：```ip```
 3. 选择```Theme - Soda```，并等待安装完成
@@ -31,7 +31,7 @@ Preference->Settings
 ```
 保存即可
 
-## 添加到右键菜单
+## 添加到右键菜单 {#right-menu}
 1. 进入到SublimeText3安装目录
 2. 创建文本文件然后重命名为：```sublime_addright.inf```
 3. 填入以下代码
@@ -51,7 +51,7 @@ hkcr,"*\\shell\\SublimeText3","Icon",0x20000,"%1%\sublime_text.exe, 0"
 hkcr,"Directory\shell\SublimeText3\command",,,"""%1%\sublime_text.exe"" ""%%1"""
 ```
 
-## 常用配置
+## 常用配置 {#conf}
 ```
 {
 	# 显示右侧迷你视图

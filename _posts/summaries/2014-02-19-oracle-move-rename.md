@@ -15,7 +15,7 @@ tag: oracle
 查看当前是否启用归档模式：
 `archive lg list`
 
-# 归档模式
+# 归档模式 {#archive-mode}
 1. 数据文件a脱机：
 `alter database datafile '路径1' offline；`
 
@@ -31,7 +31,7 @@ tag: oracle
 5. 数据文件a联机：
 `alter database datafile'路径2(数据文件A的最新路径)' online；`
 
-# 非归档模式
+# 非归档模式 {#noarchive-mode}
 1. 关闭数据库：
 `shutdown immedate`
 

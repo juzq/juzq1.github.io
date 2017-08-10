@@ -10,7 +10,7 @@ tag: sublime
 {:toc}
 
 
-# java程序中加入启动参数
+# java程序中加入启动参数 {#lauch-params}
 * jdk1.5及以后：
 
 `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005`
@@ -21,7 +21,7 @@ tag: sublime
 
 `-Xnoagent -Djava.compiler=NONE -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005`
 
-# 连接调试
+# 连接调试 {#conn-dbg}
 
 * Eclipse调试
 
