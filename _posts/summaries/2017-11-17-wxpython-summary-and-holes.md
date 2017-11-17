@@ -11,16 +11,16 @@ tag: python
 
 
 
-# wxPython介绍
+# wxPython介绍 {#description}
     wxPython是针对Python编程语言的一套跨平台的图形用户界面工具集。它允许Python开发者使用一些健壮的、功能强大的图形用户接口来简单并且容易地开发GUI程序。它实现了一套封装了闻名的跨平台的使用C++编写的GUI组件——wxWidgets的Python扩展模块。
     
     像Python和wxWidgets一样，wxPython是开源的，这就意味着任何人可以免费地使用它并且查看和修改它的源代码，同样也可以贡献代码来修复bug或者完善该组件。
 > 以上引用自wxPython官方网站的介绍<https://wxpython.org/pages/overview/>
 
-# 界面构建
+# 界面构建 {#gui}
 如上篇博客[苍龙服务器发布工具的优化思路](http://192.168.2.118/wordpress/2017/11/03/%e8%8b%8d%e9%be%99%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%8f%91%e5%b8%83%e5%b7%a5%e5%85%b7%e7%9a%84%e4%bc%98%e5%8c%96%e6%80%9d%e8%b7%af/)中提到，使用wxPython组件构建GUI的原因便是可以方便地使用[wxFormBuilder](https://github.com/wxFormBuilder/wxFormBuilder)构建界面，简单地拖控件即可，所见即所得，很快就能拼出想要的界面效果。
 
-# 常用控件介绍
+# 常用控件介绍 {#widget}
 * 静态文本：StaticText
 StaticText用来显示普通的文字，主要方法有：
 ```
@@ -56,7 +56,7 @@ Choice用来让用户选择指定的条目，不可自定义编辑，主要方�
     清空文本框
 ```
 
-# 踩过的坑
+# 踩过的坑 {#holes}
 * 在wxPython中执行高耗时任务时，会导致界面暂时卡死
 解决方法：创建一个新线程来执行高耗时任务，并采用回调的方式在任务线程中修改控件数据
 ```
