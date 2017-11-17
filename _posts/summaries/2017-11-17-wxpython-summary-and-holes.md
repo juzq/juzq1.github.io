@@ -30,8 +30,7 @@ StaticText用来显示普通的文字，主要方法有
 ```
 
 * 下拉菜单：Choice
-Choice用来让用户选择指定的条目，不可自定义编辑，主要方法有
-```
+Choice用来让用户选择指定的条目，不可自定义编辑，主要方法有:```
  GetSelection(self)
     获取所选项的下标，如果没有选择返回NOT_FOUND
     返回类型: int
