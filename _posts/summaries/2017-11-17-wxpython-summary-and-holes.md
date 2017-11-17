@@ -1,3 +1,16 @@
+---
+layout: post
+title: wxPython开发总结及踩过的坑
+date: 2017-11-17 00:17:43 +0800
+categories: 总结归纳
+tag: python
+---
+
+* content
+{:toc}
+
+
+
 # wxPython介绍
     wxPython是针对Python编程语言的一套跨平台的图形用户界面工具集。它允许Python开发者使用一些健壮的、功能强大的图形用户接口来简单并且容易地开发GUI程序。它实现了一套封装了闻名的跨平台的使用C++编写的GUI组件——wxWidgets的Python扩展模块。
     
@@ -57,5 +70,3 @@ wx.CallAfter(pub.sendMessage, 'update_text_status', msg='正在发布')
 def update_text_status(self, msg):
         self.text_status.SetLabel(msg)
 ```
-
-* 使用pyinstaller打包时
