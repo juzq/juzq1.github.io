@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git笔记
+title: git学习笔记之项目初始化
 date: 2017-07-24 12:10:22 +0800
 categories: 学习笔记
 tag: git
