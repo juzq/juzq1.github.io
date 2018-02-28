@@ -3,7 +3,7 @@ layout: post
 title: Centos7最小化安装后配置备忘
 date: 2017-05-06 00:17:43 +0800
 categories: 总结归纳
-tag: linux,centos
+tag: linux, centos
 ---
 
 * content
