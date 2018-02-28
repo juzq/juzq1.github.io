@@ -3,7 +3,7 @@ layout: post
 title: 远程调试java程序
 date: 2015-11-13 10:15:45 +0800
 categories: 总结归纳
-tag: sublime
+tag: jdk
 ---
 
 * content

@@ -3,7 +3,7 @@ layout: post
 title: Redis笔记
 date: 2015-01-08 10:31:24 +0800
 categories: 学习笔记
-tag: sublime
+tag: redis
 ---
 
 * content
