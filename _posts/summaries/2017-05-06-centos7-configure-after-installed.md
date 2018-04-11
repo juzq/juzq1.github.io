@@ -63,5 +63,24 @@ root soft nproc unlimited
 2. 解压到/usr/local/lib/java8
 3. 创建符号链接到环境变量目录
 
+# 安装MySQL5.7
+1. 官网下载安装包：<https://dev.mysql.com/downloads/mysql/>
+2. 依次安装以下包：
+```
+mysql-community-common-5.7.21-1.el6.x86_64.rpm
+mysql-community-libs-5.7.21-1.el6.x86_64.rpm
+mysql-community-client-5.7.21-1.el6.x86_64.rpm
+sudo yuminstall numactl -y（为了安装依赖：libnuma.so）
+mysql-community-server-5.7.21-1.el6.x86_64.rpm
+```
+3. 启动：`sudo service mysqld start`（注：若有旧版本mysql需要先清空旧版数据文件，默认路径为/var/lib/mysql）
+4. 查看初始root密码：`sudo grep 'temporary password' /var/log/mysqld.log`
+5. 修改密码：`alter user root@localhost identified by 'xxxxx';`（注：MySQL密码策略默认为至少8位、有大小写字母、有特殊字符）
+6. 访问授权：
+```
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.60.162' IDENTIFIED BY '123456' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
+
 
 > 原文发表在我的cnblog博客：<http://www.cnblogs.com/emberd/p/6815454.html>，于2017/07/20迁入
