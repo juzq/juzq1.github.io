@@ -55,10 +55,13 @@ tag: git
 <br>这时候就能看到新的远程仓库：digisky
 4. push到新的远程仓库：`git push digisky`
 
-# 从远程仓库合并 {#merge}
-
-1. 将remote获取到本地：`git fetch origin`
-2. 合并：`git merge origin/master`
+# 从其他分支合并 {#merge}
+如果我们的项目B是从其他项目A fork过来的，那么就需要合并项目A的一些更新到我们的项目B，步骤如下：
+1. 查看是否配置upstream源：`git remote -v`
+<br>若结果没有upstream，则添加项目A的地址：
+<br>```git remote add upstream  git remote add upstream https://github.com/xxx/xxx.git```
+2. 将upstream获取到本地：`git fetch upstream`
+3. 合并：`git merge upstream/master`
 
 # 使用SSH密钥进行身份验证 {#ssh-key}
 push代码到远程仓库时，如果是HTTPS方式Clone的项目，每次push都需要验证用户名和密码，过程非常繁琐，因此可以使用ssh的方式连接远程仓库。
