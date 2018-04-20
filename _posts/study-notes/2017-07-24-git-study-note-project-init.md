@@ -89,11 +89,9 @@ tag: git
 
 ```
 Host git.ppgame.com  
-   Hostname git.ppgame.com
    IdentityFile ~/.ssh/id_rsa_ppgame
 
 Host github.com
-   Hostname github.com
-   IdentityFile ~/.ssh/id_dsa_common
+   IdentityFile ~/.ssh/id_dsa_github
 ```
 其中，`Host`对应仓库的域名，`IdentityFile`对应要使用的私钥即可
