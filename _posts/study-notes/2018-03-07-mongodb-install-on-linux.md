@@ -3,7 +3,7 @@ layout: post
 title: mongodb笔记——Linux环境下安装与使用
 date: 2018-03-07 0:10:22 +0800
 categories: 学习笔记
-tag: git
+tag: mongodb
 ---
 
 * content
