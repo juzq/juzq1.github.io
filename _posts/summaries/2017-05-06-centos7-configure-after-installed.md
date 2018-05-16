@@ -15,18 +15,19 @@ tag: linux
 
 # 切换yum源为阿里云 {#yum}
 1. 备份旧源:
-
-	`mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup`
+`mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup`
 	
 2. 下载新的源文件:
-	
-	`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
+`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
+（可将7换成6、5等等，根据系统版本而定）
+3. 下载EPEL源
+`wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo `
 
-	（可将7换成6、5等等，根据系统版本而定）
-
-3. 生成缓存：
-	
-	`yum makecache`
+3. 重新生成缓存：
+```
+yum clean all
+yum makecache
+```
 
 # 设置静态ip和DNS {#ip-dns}
 `vi /etc/sysconfig/network-scripts/ifcfg-eth0`，添加如下内容：
