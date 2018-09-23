@@ -12,6 +12,7 @@ motto: 不积跬步，无以至千里；不积小流，无以成江海。
 banner: 学而不思则罔，思而不学则殆。
 
 #permalink: /:categories/:year/:month/:day/:title/
+plugins: [jekyll-paginate]
 permalink: /:year/:month/:day/:title/
 paginate: 10
 
