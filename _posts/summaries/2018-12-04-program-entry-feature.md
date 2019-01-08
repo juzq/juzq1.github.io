@@ -3,7 +3,7 @@ layout: post
 title: 各编程语言入口特征
 date: 2018-12-04 0:13:22 +0800
 categories: 总结归纳
-tag: maven
+tag: 逆向
 ---
 
 * content
@@ -20,7 +20,7 @@ push zzz
 ```
 区段：.text, .data, .rdata, .rsrc
 
-## VS2008/VS2013 {#vs2008-2013}
+## VS2008/2013/2015 {#vs2008-2013}
 ```
 call xxx
 jmp yyy
@@ -34,25 +34,16 @@ mov ebp, esp
 sub esp, n
 mov ...
 ```
-而VS2013的xxx为：
+而VS2013/2015的xxx为：
 ```
 push ebp
 mov ebp, esp
 sub esp, n
 and ...
 ```
-区段：.text, .data, .rdata, .rsrc, .reloc
+区段(2013)：.text, .data, .rdata, .rsrc, .reloc
+区段(2015)：.text, .data, .rdata, .rsrc, .reloc, .textbss, .idata, .gfids, .00cfg
 
-## VS2015 {#vs2015}
-```
-jmp A
-...
-A:
-push ebp
-mov ebp, esp
-call xxx
-```
-区段：.text, .data, .rdata, .rsrc, .reloc, .textbss, .idata, .gfids, .00cfg
 
 # 易语言 {#e}
 ## 独立编译 {#compile-alone}
