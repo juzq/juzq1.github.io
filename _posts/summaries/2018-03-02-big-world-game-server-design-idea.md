@@ -43,7 +43,7 @@ tag: 游戏服务器
 在分布式服务器架构中，玩家感知不到多个游戏服（Virtual Server）的存在，每次登陆时，通过云中算法为玩家分配游戏服ID。
 * 方案一：数据分散存储
 
-![image](http://icoding.pw/styles/images/blog/20180306/pic1.jpg)
+![image](../../../../styles/images/blog/20180306/pic1.jpg)
 
 如上图所示，假设玩家1被分配到了1服，玩家2被分配到了2服。如果数据分散存储，则玩家1数据存储在了1服的数据库中，玩家2存储在了2服的数据库中。那么玩家1以后每次登陆，都只能被分配到1服中。
 
@@ -58,7 +58,7 @@ tag: 游戏服务器
 
 * 方案二：数据集中存储
 
-![image](http://icoding.pw/styles/images/blog/20180306/pic2.jpg)
+![image](../../../../styles/images/blog/20180306/pic2.jpg)
 
 如上图所示，采用数据集中存储，则以后无论玩家被分配到哪个服（Virtual Server），都可以通过分布式数据库（Distributed Storage）加载玩家数据。
 
