@@ -1,13 +1,10 @@
 ---
 layout: post
-title: 苍龙三国服务器的持续集成（交付、部署）之路
+title: 苍龙三国服务器的持续集成、交付、部署之路
 date: 2019-08-02 0:13:22 +0800
 categories: 总结归纳
 tag: DevOps
 ---
-
-* content
-{:toc}
 
 # 前言
 
@@ -53,7 +50,7 @@ tag: DevOps
 
 &emsp;&emsp;该版本通过界面选择jdk路径，实现了代码自动编译、打包、上传、更新，基本实现了持续集成、交付的工作流程，同时解决了问题2（更新测试服过程繁琐、易出错的问题）。
 
-        >代码已上传至GitLab，有兴趣可以前往查看 https://git.ppgame.com/lijixue/sgcard-server-publish-tool
+> 代码已上传至GitLab，有兴趣可以前往查看 https://git.ppgame.com/lijixue/sgcard-server-publish-tool
 
 # 持续集成、交付与部署
 
