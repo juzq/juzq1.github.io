@@ -152,15 +152,16 @@ tag: DevOps
 
 # 服务器更新操作流程对比 {#compare}
 
-原有更新流程（每一步均为手动操作）：
+* 原有更新流程（每一步均为手动操作）：
 
 ![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/9.png)
 
-现有更新流程（只有一步操作）：
+* 现有更新流程（只有一步操作）：
 
 ![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/10.png)
 
-对比（以下分别为有/无持续集成、交付、部署下的对比结果）：
+# 细节对比 {#detail-compare}
+以下分别为有/无持续集成、交付、部署下的对比结果：
 
 *   正式服维护操作时间
     *   无：开发人员15分钟+运维人员15分钟。
