@@ -6,9 +6,12 @@ categories: 总结归纳
 tag: DevOps
 ---
 
+* content
+{:toc}
+
 # 前言
 
-​![test](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/1.jpg)
+​![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/1.jpg)
 
 &emsp;&emsp;如今，持续集成已成为软件开发的标准化流程，也是敏捷开发的重要组成一环。所谓持续集成，是指软件开发团队成员定期（每天甚至更短）将自己的开发成果合并到产品项目中，通过自动化构建（编译、发布、自动化测试等）验证本次开发成果，尽可能快地发现错误与漏洞（可能是本次开发内容本身的问题，也可能是开发内容与已有内容之间的兼容性问题）。
 
