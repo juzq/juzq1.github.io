@@ -25,7 +25,7 @@ tag: DevOps
 
 # 项目历史 {#history}
 
-![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/%E5%B9%BF%E5%91%8A768512.jpg)
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/13.png)
 
 &emsp;&emsp;苍龙项目组立项于2014年初，苍龙在研发初期，把专注力都放在产品本身，为了产品的快速上线，高度重(chóng)用了公司已有项目的开发成果。但在部署运维方面，仍然是用的非常原始的手段：手动编译、手动打包、手动更新...。好消息是，苍龙因为研发周期短，在其他同类游戏出现之前占领了“写实三国卡牌”这个新兴市场，在日本、韩国、东南亚都取得了不错的成绩。但是，因为包括持续集成等在内的流程等方面的不足，也给项目组带来了很多的问题与困扰。
 
