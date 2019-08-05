@@ -11,7 +11,7 @@ tag: DevOps
 
 # 前言 {#preface}
 
-​![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/1.jpg)
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/1.jpg)
 
 &emsp;&emsp;如今，持续集成已成为软件开发的标准化流程，也是敏捷开发的重要组成一环。所谓持续集成，是指软件开发团队成员定期（每天甚至更短）将自己的开发成果合并到产品项目中，通过自动化构建（编译、发布、自动化测试等）验证本次开发成果，尽可能快地发现错误与漏洞（可能是本次开发内容本身的问题，也可能是开发内容与产品现有内容之间的兼容性问题）。
 
@@ -24,6 +24,8 @@ tag: DevOps
 &emsp;&emsp;既然持续集成如此重要，那为什么"苍龙"这款产品一直没有做持续集成等相关流程呢？这就要从项目历史说起。
 
 # 项目历史 {#history}
+
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/%E5%B9%BF%E5%91%8A768512.jpg)
 
 &emsp;&emsp;苍龙项目组立项于2014年初，苍龙在研发初期，把专注力都放在产品本身，为了产品的快速上线，高度重(chóng)用了公司已有项目的开发成果。但在部署运维方面，仍然是用的非常原始的手段：手动编译、手动打包、手动更新...。好消息是，苍龙因为研发周期短，在其他同类游戏出现之前占领了“写实三国卡牌”这个新兴市场，在日本、韩国、东南亚都取得了不错的成绩。但是，因为包括持续集成等在内的流程等方面的不足，也给项目组带来了很多的问题与困扰。
 
@@ -58,11 +60,29 @@ tag: DevOps
 
 &emsp;&emsp;有了上述持续集成的流程之后，我又在思考持续部署应该怎么做，但是发现好像进入了死胡同。因为使用自定义工具方式的持续集成与交付，代码并没有提交，并不能保证更新的测试服的代码是完整和最新的，所以运维在更新正式服时，也不能直接使用测试服的代码，因此，已有的自定义工具更新无法完成持续部署等后续流程。
 
-## Jenkins介绍 {#jenkins}
+## 使用Jenkins {#jenkins}
 
-&emsp;&emsp;[Jenkins](https://jenkins.io/zh/)是一款开源 CI&CD （持续构建与部署）软件，用于自动化各种任务，包括构建、测试和部署软件。可以使用Maven来构建Java应用，用npm来构建Node.js与React应用，用PyInstaller来构建python应用等等。安装和使用Jenkins也非常简单，[官网](https://jenkins.io/zh/doc/book/installing/)详细介绍了在不同平台的多种安装方法，我选择了最方便的使用war包来运行，因为服务器自带有JDK环境:D。因此为了更方便的构建苍龙服务器代码（java语言开发），首先就需要进行Maven的集成。
+### Jenkins介绍 {#jenkins-desc}
+
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/4.png)
+
+&emsp;&emsp;[Jenkins](https://jenkins.io/zh/)是一款开源 CI&CD （持续构建与部署）软件，用于自动化各种任务，包括构建、测试和部署软件。可以使用Maven来构建Java应用，用npm来构建Node.js与React应用，用PyInstaller来构建python应用等等。安装和使用Jenkins也非常简单，[官网](https://jenkins.io/zh/doc/book/installing/)详细介绍了在不同平台的多种安装方法，我选择了最方便的使用war包来运行，因为服务器自带有JDK环境。
+
+### 使用Jenkins {#use-jenkins}
+
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/11.png)
+
+&emsp;&emsp;jenkins的使用非常简单，只要按照提示一步步进行即可。这里选择最常用的“构建一个自由风格的软件项目”，如果后续步骤比较复杂，可以考虑使用流水线。
+
+### 现有的构建方式orMaven改造？ {#script-or-maven}
+
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/12.png)
+
+&emsp;&emsp;这一步比较关键，Jenkins让我们选择使用何种方式来构建项目。这里我进行了一番斟酌，按照目前苍龙传统的构建方式，是使用javac来编译，然后使用zip来打包应该选择shell方式。但目前这种方式没有持续集成流程中“自动测试”这样一环，而自动测试对于持续集成来讲非常重要。因此为了加入自动测试以及今后能更方便的构建苍龙服务器代码，最后决定，首先进行Maven的集成。
 
 ## Maven集成 {#maven}
+
+![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/5.png)
 
 ### Maven介绍 {#maven-desc}
 
@@ -95,7 +115,7 @@ tag: DevOps
 </testResources>
 ```
 
-​&emsp;&emsp;至此，Maven集成完毕。
+&emsp;&emsp;至此，Maven集成完毕。
 
 ## 测试集成 {#test}
 
