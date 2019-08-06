@@ -60,7 +60,7 @@ tag: DevOps
 
 &emsp;&emsp;有了上述持续集成的流程之后，我又在思考持续部署应该怎么做，但是发现好像进入了死胡同。因为使用自定义工具方式的持续集成与交付，代码并没有提交，并不能保证更新的测试服的代码是完整和最新的，所以运维在更新正式服时，也不能直接使用测试服的代码，因此，已有的自定义工具更新无法完成持续部署等后续流程。
 
-## 使用Jenkins {#jenkins}
+## Jenkins {#jenkins}
 
 ### Jenkins介绍 {#jenkins-desc}
 
@@ -74,11 +74,11 @@ tag: DevOps
 
 &emsp;&emsp;jenkins的使用非常简单，只要按照提示一步步进行即可。这里选择最常用的“构建一个自由风格的软件项目”，如果后续步骤比较复杂，可以考虑使用流水线。
 
-### 现有的构建方式orMaven改造？ {#script-or-maven}
+### 现有的构建方式 or Maven改造？ {#script-or-maven}
 
 ![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/12.png)
 
-&emsp;&emsp;这一步比较关键，Jenkins让我们选择使用何种方式来构建项目。这里我进行了一番斟酌，按照目前苍龙传统的构建方式，是使用javac来编译，然后使用zip来打包应该选择shell方式。但目前这种方式没有持续集成流程中“自动测试”这样一环，而自动测试对于持续集成来讲非常重要。因此为了加入自动测试以及今后能更方便的构建苍龙服务器代码，最后决定，首先进行Maven的集成。
+&emsp;&emsp;这一步比较关键，Jenkins让我们选择使用何种方式来构建项目。这里我进行了一番斟酌，按照目前苍龙传统的构建方式，是使用javac来编译，然后使用zip来打包应该选择shell方式。但目前这种方式没有持续集成流程中“自动测试”这样一环，而自动测试对于持续集成来讲又非常重要。因此为了加入自动测试以及今后能更方便的构建苍龙服务器代码，最后决定，首先进行Maven的集成。
 
 ## Maven集成 {#maven}
 
@@ -86,7 +86,7 @@ tag: DevOps
 
 ### Maven介绍 {#maven-desc}
 
-&emsp;&emsp;Maven是一款专门对Java应用进行依赖管理的工具，它采用了统一的标准（Pom文件）来构建Java应用，使得Java开发者对于项目中使用的依赖组件能够一目了然，很便捷地处理依赖冲突的问题，也能很高效地完成编译、打包等操作，除此之外，Maven还能在打包之前完成自动化单元测试，非常有利于开发人员的自我测试，在功能开发阶段就找出并解决一些Bug。但非常不幸的是，苍龙服务器代码因为一些历史原因，并没有使用Maven。没有条件就创造条件，下面就开始了Maven集成工作。
+&emsp;&emsp;Maven是一款专门对Java应用进行依赖管理的工具，它采用了统一的标准（Pom文件）来构建Java应用，使得Java开发者对于项目中使用的依赖组件能够一目了然，很便捷地处理依赖冲突的问题，也能很高效地完成编译、打包等操作。除此之外，Maven还能在打包之前完成自动化单元测试，非常有利于开发人员的自我测试，在功能开发阶段就找出并解决一些Bug。但非常不幸的是，苍龙服务器代码因为一些历史原因，并没有使用Maven。没有条件就创造条件，下面就开始了Maven集成工作。
 
 ### Maven集成步骤 {#maven-step}
 1. 整理各服务器项目代码（游戏服、战斗服、世界服、日志服）所使用的jar包，区分出公有jar包与私有jar包。
@@ -121,44 +121,44 @@ tag: DevOps
 
 &emsp;&emsp;Maven已经有了，那么可以开始使用Jenkins进行持续集成了吗？不！不要忘了Maven还有一项重要使命：自动完成单元测试。苍龙服务器代码中虽然之前有引入JUnit包，但是需要手动运行，非常不方便（以前也从来没有手动运行过）。测试集成也比较简单，主要分为两类：
 
-1.  单元测试
+### 单元测试 {#unit-test}
 
-    *   静态公共方法(public static ...)：直接在测试类中调用即可。
+*   静态公共方法(public static ...)：直接在测试类中调用即可。
 
-    *   私有方法(private ...)：这类方法无法在测试类中直接调用，这时候Java的反射调用就能排上用场了：
-
-        ```java
-        Method method = xxx.getClass().getDeclaredMethod("xxx", xxx.class,xxx.class);
-        method.setAccessible(true);
-        method.invoke(xxx, xxx, xxx);
-        ```
-
-    *   Spring注入对象的成员方法（service等）：从Spring上下文中获取对象再调用即可。
-
-2.  Mock测试
-
-    ​       有时候编写测试代码时会出现这些情况，某个类可能过于复杂，可能因为依赖过多，甚至可能构造方法因为业务需要被设置成了私有（private）访问，导致我们无法直接new出这个对象，这时候怎么测试呢？这时候Mock测试就派上用场了。我选用的是目前使用最广泛的mockito库，步骤如下：
+*   私有方法(private ...)：这类方法无法在测试类中直接调用，这时候Java的反射调用就能排上用场了：
 
     ```java
-    XXX mock = mock(XXX.class);
-    when(mock.xx()).thenReturn(xx);
+    Method method = xxx.getClass().getDeclaredMethod("xxx", xxx.class,xxx.class);
+    method.setAccessible(true);
+    method.invoke(xxx, xxx, xxx);
     ```
 
-    &emsp;&emsp;这样就可以在测试代码中，很方便的调用mock.xx()了，非常简单。
+*   Spring注入对象的成员方法（service等）：从Spring上下文中获取对象再调用即可。
 
-    &emsp;&emsp;以后在每次Maven打包时，就会自动查找test路径下所有类中以@Test注解的所有public void xxx测试方法，如果测试结果与预期不符，就会终止打包，我们便可以在打包阶段就解决掉一些Bug，降低产品的风险。
+### Mock测试 {#mock-test}
 
-## Jenkins持续集成、交付与部署 {#jenkins-ci-cd}
+&emsp;&emsp;有时候编写测试代码时会出现这些情况，某个类可能过于复杂，可能因为依赖过多，甚至可能构造方法因为业务需要被设置成了私有（private）访问，导致我们无法直接new出这个对象，这时候怎么测试呢？这时候Mock测试就派上用场了。我选用的是目前使用最广泛的mockito库，步骤如下：
+
+1.  模拟出该对象：`XXX mock = mock(XXX.class);`
+2.  设置XXX.class的xx()方法返回值：`when(mock.xx()).thenReturn(xx);`
+
+&emsp;&emsp;这样就可以在测试代码中，很方便的调用mock.xx()了，非常简单。
+
+&emsp;&emsp;以后在每次Maven打包时，就会自动查找test路径下所有类中以@Test注解的所有public void xxx测试方法，如果测试结果与预期不符，就会终止打包，我们便可以在打包阶段就解决掉一些Bug，降低产品的风险。
+
+## 流程图 {#jenkins-ci-cd}
 
 &emsp;&emsp;类似于之前采用工具的持续集成方式，jenkins的集成流程也分为了程序版与策划版。
 
-程序版流程图：
+### 程序版流程图 {#programmer}
 
 ![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/6.png)
 
-策划版流程图：
+### 策划版流程图 {#designer}
 
 ![](https://gitee.com/emberd/pics/raw/master/blog/2019/07/canglong_ci_develop/7.png)
+
+### 优化 {#optimize}
 
 &emsp;&emsp;可以看到，两条流水线的区别就是持续集成不同，程序是检出的代码，并且需要编译、测试、打包；而策划检出的是配置表。
 
