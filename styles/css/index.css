@@ -378,7 +378,7 @@ h6 .small {
 }
 h1,
 .h1 {
-  font-size: 25px;
+  font-size: 22px;
 }
 h2,
 .h2 {
@@ -386,15 +386,15 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 15px;
+  font-size: 18px;
 }
 h4,
 .h4 {
-  font-size: 15px;
+  font-size: 17px;
 }
 h5,
 .h5 {
-  font-size: 15px;
+  font-size: 16px;
 }
 h6,
 .h6 {
@@ -6101,8 +6101,8 @@ html {
 }
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
+  font-size: 16px;
+  line-height: 1.82857143;
   color: #333333;
   background-color: #f7f7f7;
 }
