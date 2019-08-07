@@ -11,7 +11,7 @@ tag: DevOps
 
 # 前言 {#preface}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/1.jpg)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/1.jpg)
 
 &emsp;&emsp;如今，持续集成已成为软件开发的标准化流程，也是敏捷开发的重要组成一环。所谓持续集成，是指软件开发团队成员定期（每天甚至更短）将自己的开发成果合并到产品项目中，通过自动化构建（编译、发布、自动化测试等）验证本次开发成果，尽可能快地发现错误与漏洞（可能是本次开发内容本身的问题，也可能是开发内容与产品现有内容之间的兼容性问题）。
 
@@ -25,7 +25,7 @@ tag: DevOps
 
 # 项目历史 {#history}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/13.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/13.png)
 
 &emsp;&emsp;苍龙项目组立项于2014年初，苍龙在研发初期，把专注力都放在产品本身，为了产品的快速上线，高度重(chóng)用了公司已有项目的开发成果。但在部署运维方面，仍然是用的非常原始的手段：手动编译、手动打包、手动更新...。好消息是，苍龙因为研发周期短，在其他同类游戏出现之前占领了“写实三国卡牌”这个新兴市场，在日本、韩国、东南亚都取得了不错的成绩。但是，因为包括持续集成等在内的流程等方面的不足，也给项目组带来了很多的问题与困扰。
 
@@ -40,7 +40,7 @@ tag: DevOps
 
 &emsp;&emsp;问题如此之多，需要一步一步来解决。最基础也是最亟待解决的问题就是问题1（策划自主更新测试服配置表），因为这严重影响了策划与服务器程序员的工作效率。时间还是2016年，当时我刚来到苍龙项目组，接到的第一个任务就是在一周之内开发出一套能交付给策划使用更新测试服配置表的工具。在梳理完服务器更新流程后，大致理了一下实现步骤：远程调用服务器脚本关闭服务器 -> 上传策划需要发布的配置表 -> 远程启动服务器。因为时间要求比较紧，所以只做了一个控制台版，效果如下图：
 
-![2](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/2.png)
+![2](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/2.png)
 
 &emsp;&emsp;虽然比较简陋，界面也不太友好，但已经能基本解决策划更新配置表的问题。后来也增加了代码打包，发布代码等功能。
 
@@ -50,7 +50,7 @@ tag: DevOps
 
 &emsp;&emsp;虽然已经有了测试服发布工具，但是控制台窗口界面不友好，操作不便，连我自己都比较嫌弃它，更何况是其他人。于是便有了制作图形界面版本的想法，在调研了策划、程序等多方需求后，我利用工作空档开始了图形界面版开发。因为桌面软件重在精简，上百m的jre环境让我放弃了继续使用java作为开发语言的想法，而是转向了python。python图形界面开发框架有wxpython，ssh库有paramiko，windows环境打包有pyinstaller，完全符合我的预期，因此图形界面版就此诞生。
 
-![3](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/3.png)
+![3](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/3.png)
 
 &emsp;&emsp;该版本通过界面选择jdk路径，实现了代码自动编译、打包、上传、更新，基本实现了持续集成、交付的工作流程，同时解决了问题2（更新测试服过程繁琐、易出错的问题）。
 
@@ -64,25 +64,25 @@ tag: DevOps
 
 ### Jenkins介绍 {#jenkins-desc}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/4.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/4.png)
 
 &emsp;&emsp;[Jenkins](https://jenkins.io/zh/)是一款开源 CI&CD （持续构建与部署）软件，用于自动化各种任务，包括构建、测试和部署软件。可以使用Maven来构建Java应用，用npm来构建Node.js与React应用，用PyInstaller来构建python应用等等。安装和使用Jenkins也非常简单，[官网](https://jenkins.io/zh/doc/book/installing/)详细介绍了在不同平台的多种安装方法，我选择了最方便的使用war包来运行，因为服务器自带有JDK环境。
 
 ### 使用Jenkins {#use-jenkins}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/11.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/11.png)
 
 &emsp;&emsp;jenkins的使用非常简单，只要按照提示一步步进行即可。这里选择最常用的“构建一个自由风格的软件项目”，如果后续步骤比较复杂，可以考虑使用流水线。
 
 ### 现有的构建方式 or Maven改造？ {#script-or-maven}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/12.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/12.png)
 
 &emsp;&emsp;这一步比较关键，Jenkins让我们选择使用何种方式来构建项目。这里我进行了一番斟酌，按照目前苍龙传统的构建方式，是使用javac来编译，然后使用zip来打包应该选择shell方式。但目前这种方式没有持续集成流程中“自动测试”这样一环，而自动测试对于持续集成来讲又非常重要。因此为了加入自动测试以及今后能更方便的构建苍龙服务器代码，最后决定，首先进行Maven的集成。
 
 ## Maven集成 {#maven}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/5.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/5.png)
 
 ### Maven介绍 {#maven-desc}
 
@@ -152,11 +152,11 @@ tag: DevOps
 
 ### 程序版流程图 {#programmer}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/6.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/6.png)
 
 ### 策划版流程图 {#designer}
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/7.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/7.png)
 
 ### 优化 {#optimize}
 
@@ -166,7 +166,7 @@ tag: DevOps
 
 流程图如下：
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/8.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/8.png)
 
 &emsp;&emsp;在该优化版本中，将之前的两条流水线相同的部分合并，不同的部分保留（SVN检出配置表、代码）。配置表和代码的产物生成之后，将两份产物合并作为新的产物，再生成版本号，用该版本产物来更新测试服与正式服。
 
@@ -174,11 +174,11 @@ tag: DevOps
 
 * 原有更新流程（每一步均为手动操作）：
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/9.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/9.png)
 
 * 现有更新流程（只有一步操作）：
 
-![](https://gitee.com/emberd/res/raw/master/pic/2019/07/canglong_ci_develop/10.png)
+![](https://gitee.com/juzii/res/raw/master/pic/2019/07/canglong_ci_develop/10.png)
 
 # 细节对比 {#detail-compare}
 以下分别为有/无持续集成、交付、部署下的对比结果：
