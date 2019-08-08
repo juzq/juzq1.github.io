@@ -3613,7 +3613,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 20px 15px;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 20px;
 }
 .navbar-brand:hover,
@@ -3688,11 +3688,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
+    margin-right: 20px;
   }
   .navbar-nav > li > a,
   .docs-nav .navbar-nav > li > span {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 @media (min-width: 768px) {
@@ -6316,7 +6317,8 @@ hr {
 .docs-header,
 .docs-home {
   color: #b9c8e0;
-  background-color: #1d365d;
+  /*background-color: #1d365d;*/
+  background-color: white;
 }
 /* Page headers */
 .docs-header {
@@ -6325,6 +6327,12 @@ hr {
   font-size: 16px;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+
+  background: -webkit-linear-gradient(left, white , #1f3753, #1f3753); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, white, #1f3753, #1f3753); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, white, #1f3753, #1f3753); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, white , #1f3753, #1f3753); /* 标准的语法 */
+
 }
 .docs-header h1 {
   color: #fff;
@@ -6332,9 +6340,14 @@ hr {
 .docs-header p {
   font-weight: 300;
   line-height: 1.5;
+  font-size: 16px;
 }
 .docs-header .container {
   position: relative;
+  background-image: url('../images/bg-reg.png');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 @media (min-width: 768px) {
   .docs-header {
@@ -6349,7 +6362,8 @@ hr {
 @media (min-width: 992px) {
   .docs-header h1,
   .docs-header p {
-    margin-right: 380px;
+    margin-right: 200px;
+    margin-top:10px;
   }
 }
 .footer {
@@ -6513,14 +6527,18 @@ hr {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
   background-color: #1d365d;
   border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+  box-shadow: 0 -3px 8px #6ab3fb;
+
 }
 .docs-nav .navbar-collapse {
   border-color: #111f36;
+  text-align: center;
+  margin-top:10px;
+
 }
 .docs-nav .container .navbar-brand {
-  margin: 12px 0 0;
-  width: 100px;
+  margin: 20px 0 0;
+  width: 180px;
   padding: 0;
 }
 .docs-nav .container .navbar-brand img {
@@ -6535,6 +6553,7 @@ hr {
 .docs-nav .navbar-nav > li > a:hover,
 .docs-nav .navbar-nav > li > span:hover {
   color: #fff;
+  background: #4a6a9b;
 }
 .docs-nav .navbar-nav > .active > a,
 .docs-nav .navbar-nav > .active > span,
