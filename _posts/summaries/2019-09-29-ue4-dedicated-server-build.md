@@ -59,7 +59,7 @@ Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.csproj
 Engine\Source\Programs\DotNETCommon\DotNETUtilities\DotNETUtilities.csproj
 ```
 
-&emsp;&emsp;“机智”的我立刻找到了文件中的TargetFrameworkVersion字段，将默认的v4.6.2修改成了我安装的版本v4.8，再次运行GenerateProjectFiles.bat后，果然，没有报错，并且成功生成了UE4.sln。其实，如上的步骤并不是指跳过了这个巨坑，因为，这只是噩梦的开始...
+&emsp;&emsp;“机智”的我立刻找到了文件中的TargetFrameworkVersion字段，将默认的v4.6.2修改成了我安装的版本v4.8，再次运行GenerateProjectFiles.bat后，果然，没有报错，并且成功生成了UE4.sln。其实，如上的步骤并不是指跳过了这个巨坑，因为，这只是噩梦的开始……
 
 &emsp;&emsp;继续进行下面的编译源码步骤后（耗时约8小时），会得到如下的报错：
 
