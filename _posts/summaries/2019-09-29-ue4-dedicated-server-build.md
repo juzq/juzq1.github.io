@@ -28,7 +28,7 @@ tag: UE4
 
 ![](https://gitee.com/juzii/res/raw/master/pic/2019/09/ue4-dedicated-server-build/1.png)
 
-&emsp;&emsp;于是我就尝试跳过这一步，直接从[添加构建服务器目标](#为项目添加构建服务器目标)开始操作，当选择构建目标为"Development Server"后，得到了如下的报错：
+&emsp;&emsp;于是我就尝试跳过这一步，直接从“添加构建服务器目标”开始操作，当选择构建目标为"Development Server"后，得到了如下的报错：
 
 ```
 UnrealBuildTool : error : Couldn't find target rules file for target 'UE4Server' in rules assembly 'UE4Rules, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null'.
