@@ -20,6 +20,7 @@ Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，
 # 编辑器 {#editor}
 
 ## Windows
+* Typora
 * VSCode
 * Atom
 * MarkdownPad
@@ -33,16 +34,6 @@ Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，
 
 ## IOS
 * Byword
-
-## 推荐 {#recommend}
-* MarkdownPad（Windows）<br>
-官网：<https://markdownpad.com><br>
-注册码（**仅用于功能测试，请在24小时内删除，若喜欢该软件，请在官网购买正版**）<br>
-邮箱：```Soar360@live.com```<br>
-授权秘钥：
-```
-GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==
-```
 
 
 # 语法 {#syntax}
@@ -156,3 +147,6 @@ Markdown 标记区块引用是使用类似 email 中用 > 的引用方式，Mark
 ```
 多行注释
 ```
+
+## 数学公式 {#formula}
+$a^2 = a \times a$
