@@ -137,7 +137,7 @@ initial_centroids = kMeansInitCentroids(X, K);
 idx = findClosestCentroids(X, centroids);
 ```
 
-# 解压缩
+## 解压缩
 
 ```matlab
 % 通过聚类表获取原始像素值
