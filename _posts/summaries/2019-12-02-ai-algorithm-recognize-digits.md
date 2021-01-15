@@ -59,21 +59,21 @@ tag: AI
 
 &emsp;&emsp;逻辑回归的假设函数是由S型函数（Sigmoid Function）演变而来，S型函数的表达式及曲线如下图所示：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/sigmoid_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/sigmoid_function.png)
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis_graph.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/logistic_regression_hypothesis_graph.png)
 
 &emsp;&emsp;从曲线中可以看到，当变量z趋近于正无穷时，函数值趋近于1，当变量z趋近于负无穷时，函数值趋近于0。这样就能够很好的匹配逻辑回归，因为逻辑回归的输出为0或1，当输出值为0.7时，则表示结果为1的概率是70%，为0的概率是30%，正好可以进行概率的预测。
 
 &emsp;&emsp;受线性回归所启发，逻辑回归的假设函数公式为（其中θ为模型的参数矩阵，x为输入变量矩阵，变量z变成了θ的转置乘以x）：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/logistic_regression_hypothesis.png)
 
 &emsp;&emsp;如果要让机器来识别数字，那么首先就要先用样本去教会机器，即用样本“训练”模型。为了获得“最好”的模型，我们需要计算样本在模型下的代价函数（Cost Function，也有资料称为“损失函数”）。所谓代价函数，就是在该模型下产生的输出与实际结果间产生的偏差，偏差越小，则可以在一定程度上表明模型越好（也不是绝对的，可能会出现模型过度拟合（Overfit）的情况，需要一些手段来避免）。
 
 &emsp;&emsp;通过概率统计理论中的“最大似然估计”，可以得到如下的逻辑回归的代价函数：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_cost_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/logistic_regression_cost_function.png)
 
 &emsp;&emsp;该函数看起来很复杂，可以将其拆开来看，log(h(x))是y=1时的代价函数，log(1-h(x))是y=0时的代价函数，最右边的一项为正则化参数，可以减小出现过度拟合的几率。为了找到最好的模型（假设函数），我们需要找到该代价函数的最小值。找到最小值后，自变量θ即为我们要找的逻辑回归的模型参数。
 
@@ -87,11 +87,11 @@ tag: AI
 
 &emsp;&emsp;因此，执行梯度下降的公式为：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/gradient_decent1.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/gradient_decent1.png)
 
 &emsp;&emsp;这里需要对J(θ)求“偏导数”，求得后的结果为：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/gradient_decent2.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/gradient_decent2.png)
 
 &emsp;&emsp;至此，理论工作准备完毕，可以进行编码实战。
 
@@ -175,7 +175,7 @@ endfor
 
 &emsp;&emsp;不得不说，人类是真的聪明，居然可以想到建立类似于生物大脑神经的模型来模拟大脑，从而实现部分人类的能力。神经网络模型如下：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/neural_network.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/neural_network.png)
 
 &emsp;&emsp;可以看到，基本的神经网络模型有输入层、隐藏层、输出层。输入层用于接受输入信号，类似于人类感知视觉信号、声音信号、触觉信号等等。隐藏层可以是多层，可以让数据在不同层之间传递与处理，类似于人类的神经元，可以逐级传递。输出层用于输出处理后的数据。如果有非常多的隐藏层，又可以称为深度神经网络，在这种模型下的机器学习又称作深度学习。
 
@@ -195,7 +195,7 @@ endfor
 
 &emsp;&emsp;前面已经提到，神经网络模型其实就是有很多层的逻辑回归模型，那么代价函数也可以采用逻辑回归的代价函数，然后将每一层网络叠加起来就可以了，所以神经网络的代价函数如下：
 
-![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/neural_network_cost_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/ML/_images/neural_network_cost_function.png)
 
 &emsp;&emsp;公式看起来比较吓人，实际上只是多了网络层数K，并且参数θ从向量变成了矩阵而已。如果把这个公式转化为矩阵形式，其实非常的简单（不含最右边的正则化）：
 
