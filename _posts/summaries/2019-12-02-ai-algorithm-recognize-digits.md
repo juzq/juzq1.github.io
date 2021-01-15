@@ -9,7 +9,7 @@ tag: AI
 * content
 {:toc}
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/1.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/1.png)
 
 # 人工智能 {#AI}
 
@@ -29,7 +29,7 @@ tag: AI
 
 &emsp;&emsp;因此，人工智能、机器学习、深度学习的关系如下图所示。
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/2.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/2.png)
 
 &emsp;&emsp;至今已有数种深度学习模型，如深度神经网络、卷积神经网络和深度置信网络和递归神经网络已被应用在计算机视觉、语音识别、自然语言处理、音频识别与生物信息学等领域并获取了极好的效果。
 
@@ -43,11 +43,11 @@ tag: AI
 
 &emsp;&emsp;针对分拣快递这种简单、重复的工作，可以交给机器去做吗？我们来分析一下“临时工”所做的工作。“临时工”拿到一个快递，找到快递上的快递单，然后再找到目的省（城市），如果是华北城市，则将快递扔进“北京”的筐里；如果是华东城市，则扔进“上海”的筐里；如果是西南城市，则扔进“成都”的筐里。那么机器可以完成吗？
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/4.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/4.png)
 
 &emsp;&emsp;如上图所示，快递通过传送带进入“目的地识别系统”，识别后将该快递分配到对应地点的传送带即可。那么，该问题的关键就是“目的地识别系统”如何将快递单上的目的地识别出来，并作出正确的判断。
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/3.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/3.png)
 
 &emsp;&emsp;以顺丰速运的快递单为例，快递单上已将目的地翻译为了城市代码，通过识别该代码即可让机器“知道”快递的目的地，然后配置对应传送带接收的具体城市代码即可。
 
@@ -59,21 +59,21 @@ tag: AI
 
 &emsp;&emsp;逻辑回归的假设函数是由S型函数（Sigmoid Function）演变而来，S型函数的表达式及曲线如下图所示：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/sigmoid_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/sigmoid_function.png)
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis_graph.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis_graph.png)
 
 &emsp;&emsp;从曲线中可以看到，当变量z趋近于正无穷时，函数值趋近于1，当变量z趋近于负无穷时，函数值趋近于0。这样就能够很好的匹配逻辑回归，因为逻辑回归的输出为0或1，当输出值为0.7时，则表示结果为1的概率是70%，为0的概率是30%，正好可以进行概率的预测。
 
 &emsp;&emsp;受线性回归所启发，逻辑回归的假设函数公式为（其中θ为模型的参数矩阵，x为输入变量矩阵，变量z变成了θ的转置乘以x）：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_hypothesis.png)
 
 &emsp;&emsp;如果要让机器来识别数字，那么首先就要先用样本去教会机器，即用样本“训练”模型。为了获得“最好”的模型，我们需要计算样本在模型下的代价函数（Cost Function，也有资料称为“损失函数”）。所谓代价函数，就是在该模型下产生的输出与实际结果间产生的偏差，偏差越小，则可以在一定程度上表明模型越好（也不是绝对的，可能会出现模型过度拟合（Overfit）的情况，需要一些手段来避免）。
 
 &emsp;&emsp;通过概率统计理论中的“最大似然估计”，可以得到如下的逻辑回归的代价函数：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_cost_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/logistic_regression_cost_function.png)
 
 &emsp;&emsp;该函数看起来很复杂，可以将其拆开来看，log(h(x))是y=1时的代价函数，log(1-h(x))是y=0时的代价函数，最右边的一项为正则化参数，可以减小出现过度拟合的几率。为了找到最好的模型（假设函数），我们需要找到该代价函数的最小值。找到最小值后，自变量θ即为我们要找的逻辑回归的模型参数。
 
@@ -83,15 +83,15 @@ tag: AI
 
 &emsp;&emsp;为了得到代价函数J(θ)的最小值，我们可以采用机器学习中最常用的“梯度下降”算法（Gradient Decent）来求得函数在区间内的极小值。所谓梯度下降算法，就是对于任一函数，首先取任一点（x1或者x2均可），在这一点减去这一点对应的梯度（即该点的导数），那么这一点就会向该函数的某一极小值运动，反复进行梯度下降，则可以得到区间内的极小值x0。如果函数为凹函数，那么该极小值就是函数的最小值。
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/5.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/5.png)
 
 &emsp;&emsp;因此，执行梯度下降的公式为：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/gradient_decent1.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/gradient_decent1.png)
 
 &emsp;&emsp;这里需要对J(θ)求“偏导数”，求得后的结果为：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/gradient_decent2.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/gradient_decent2.png)
 
 &emsp;&emsp;至此，理论工作准备完毕，可以进行编码实战。
 
@@ -137,7 +137,7 @@ endfor
 
 &emsp;&emsp;利用已经训练好的10个模型，我们就可以将机器从未见过的手写数字通过10个模型，让每个模型计算出他是对应数字的概率，然后我们取最高的概率，就可以得到机器识别出的数字。我们来举个例子：
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/6.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/6.png)
 
 &emsp;&emsp;如图红框中的数字，可能有的人会认成“4”，而有的人却会认成“6”。到底是4还是6呢？可能众说纷纭，因为有的人习惯这样写4，而有的人却不习惯这样写。在机器学习中，机器会学习之前样本中的数据，学习到作者写数字的习惯，将该测试样本分别输入到10个模型后，得到如下的概率输出（均保留5位有效数字）：
 
@@ -153,9 +153,9 @@ endfor
 
 &emsp;&emsp;我们用测试样本的真实值对模型进行校验，最终获得训练的正确率为94.9%。那么取100个测试样本的识别结果如何呢？
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/7.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/7.png)
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/8.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/8.png)
 
 &emsp;&emsp;可以看到，100个测试样本的识别结果有5个数字识别错误，测试识别率为95%。那么有什么方法可以提高识别率呢？
 
@@ -167,7 +167,7 @@ endfor
 
 # 神经网络 {#nn}
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/9.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/9.png)
 
 &emsp;&emsp;人工神经网络（Artificial Neural Network），简称神经网络（Neural Network，NN），在机器学习和认知科学领域，是一种模仿生物神经网络（动物的中枢神经系统，特别是大脑）的结构和功能的数学模型或计算模型，用于对函数进行估计或近似。
 
@@ -175,7 +175,7 @@ endfor
 
 &emsp;&emsp;不得不说，人类是真的聪明，居然可以想到建立类似于生物大脑神经的模型来模拟大脑，从而实现部分人类的能力。神经网络模型如下：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/neural_network.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/neural_network.png)
 
 &emsp;&emsp;可以看到，基本的神经网络模型有输入层、隐藏层、输出层。输入层用于接受输入信号，类似于人类感知视觉信号、声音信号、触觉信号等等。隐藏层可以是多层，可以让数据在不同层之间传递与处理，类似于人类的神经元，可以逐级传递。输出层用于输出处理后的数据。如果有非常多的隐藏层，又可以称为深度神经网络，在这种模型下的机器学习又称作深度学习。
 
@@ -187,7 +187,7 @@ endfor
 
 &emsp;&emsp;正向传播的步骤如下：
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/10.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/10.png)
 
 &emsp;&emsp;假设函数有了，如果我们能找到模型的θ1与θ2，那么模型就有了，就可以用这个模型来进行数字识别了。那么怎么才能找到合适的θ1与θ2呢？与之前讲的逻辑回归类似，我们也可以先找到该模型的代价函数，然后通过梯度下降找到代价函数的最小值，就可以找到神经网络的参数了。
 
@@ -195,7 +195,7 @@ endfor
 
 &emsp;&emsp;前面已经提到，神经网络模型其实就是有很多层的逻辑回归模型，那么代价函数也可以采用逻辑回归的代价函数，然后将每一层网络叠加起来就可以了，所以神经网络的代价函数如下：
 
-![](https://gitee.com/juzii/notes/raw/master/Machine_Learning/formula_pics/neural_network_cost_function.png)
+![](https://gitee.com/juzzi/notes/raw/master/Machine_Learning/formula_pics/neural_network_cost_function.png)
 
 &emsp;&emsp;公式看起来比较吓人，实际上只是多了网络层数K，并且参数θ从向量变成了矩阵而已。如果把这个公式转化为矩阵形式，其实非常的简单（不含最右边的正则化）：
 
@@ -212,7 +212,7 @@ J = - 1 / m * (sum(sum(y .* log(h))) + sum(sum((1 - y) .* log(1-h))));
 
 &emsp;&emsp;反向传播的步骤如下：
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/11.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/11.png)
 
 &emsp;&emsp;通过第4步，我们就得到了J(θ)的偏导数，即梯度。
 
@@ -222,7 +222,7 @@ J = - 1 / m * (sum(sum(y .* log(h))) + sum(sum((1 - y) .* log(1-h))));
 
 &emsp;&emsp;θ的随机初始化的要求如下：
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/12/12.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/12/12.png)
 
 ## 在Matlab/Octave中训练 {#train2}
 
