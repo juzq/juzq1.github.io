@@ -9,7 +9,7 @@ tag: UE4
 * content
 {:toc}
 
-![](https://gitee.com/juzii/res/raw/master/pic/2019/10/shoot-game-bullet-track/1.png)
+![](https://gitee.com/juzzi/res/raw/master/pic/2019/10/shoot-game-bullet-track/1.png)
 
 # 前言 {#preface}
 
